@@ -1,5 +1,6 @@
 const express = require("express");
-const OfficeLogModel = require("../Models/OfficeLog.model"); 
+const OfficeLogModel = require("../Models/Officelog.model"); 
+
 const OfficeLogRouter = express.Router(); 
 const UserModel = require("../Models/Users.model");
 
