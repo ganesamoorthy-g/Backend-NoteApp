@@ -5,6 +5,7 @@ const nodemailer = require('nodemailer');
 const mongoose=require('mongoose')
 const saltRounds = 10;
 
+const API_BASE_URL = 'http://localhost:3000'; // Change this to your actual base URL
 
 
 const AuthRouter = express.Router();
@@ -71,8 +72,8 @@ AuthRouter.post('/forgot-password', async (req, res) => {
       expiresIn: '15m',
     });
 
-    // const resetLink = `http://localhost:3000/reset-password/${user._id}/${token}`;
-    const resetLink = `http://localhost:3000/reset-password?id=${user._id}&token=${token}`;
+    
+    const resetLink = `${API_BASE_URL}/reset-password?id=${user._id}&token=${token}`;
 
 
   
